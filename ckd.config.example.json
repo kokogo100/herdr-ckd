@@ -1,0 +1,48 @@
+{
+  "defaultWorkspace": "./workspace",
+  "requireReview": false,
+  "curateLogs": true,
+  "customRules": "",
+  "uiHost": "127.0.0.1",
+  "uiPort": 37501,
+  "model": {
+    "backend": "lmstudio",
+    "baseUrl": "http://localhost:1234/v1",
+    "model": "local-model",
+    "temperature": 0.6,
+    "contextTokens": 262144,
+    "timeoutMs": 600000
+  },
+  "roleModels": {
+    "C": {
+      "backend": "lmstudio",
+      "baseUrl": "http://localhost:1234/v1",
+      "model": "local-model",
+      "reasoningEffort": "high"
+    }
+  },
+  "threads": {
+    "maxUnits": 3,
+    "defaultMode": "auto",
+    "useWorktree": true,
+    "parallelUnits": true
+  },
+  "github": {
+    "mode": "off",
+    "remote": "origin",
+    "branchPrefix": "ckd",
+    "deleteBranchOnComplete": true,
+    "maxRemoteBranches": 5
+  },
+  "retention": {
+    "deleteTempOnComplete": true,
+    "maxJobsToKeep": 30,
+    "maxLogSizeMB": 500,
+    "maxFinetuneSizeMB": 200
+  },
+  "herdr": {
+    "enabled": true,
+    "emitOsc7501": true,
+    "autoSpawnPanes": false
+  }
+}

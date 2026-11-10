@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.herdr-ckd/
+herdr-ckd-data/
+ckd-data/
+release/
+Herdr-CKD.exe
+Herdr CKD.app/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db

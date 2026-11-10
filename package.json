@@ -1,0 +1,56 @@
+{
+  "name": "herdr-ckd",
+  "version": "0.2.0",
+  "description": "Herdr CKD: Multi-Thread AI Orchestrator (1 Fixed Core Leader C + Parallel [A_n · B_n] Maker/Checker Thread Pairs) & Desktop Dashboard by AXNli Inc.",
+  "author": {
+    "name": "AXNli Inc. (주식회사 에이엑스엔엘아이)",
+    "url": "https://axnli.com"
+  },
+  "homepage": "https://axnli.com",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "herdr-ckd": "dist/src/ui-server.js",
+    "ckd-mcp": "dist/src/server.js"
+  },
+  "files": [
+    "dist/src",
+    "scripts",
+    "assets",
+    "skills",
+    "herdr-plugin.toml",
+    "ckd.config.example.json",
+    "SOUL.md",
+    "CATALOG.md",
+    "FINETUNING_GUIDE.md",
+    "CKD_THEORY.md",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/src/server.js",
+    "ui": "node dist/src/ui-server.js",
+    "test": "tsc && node --test dist/test/orchestrator.test.js dist/test/tools.test.js dist/test/multi-orchestrator.test.js",
+    "build:exe": "npm run build && node scripts/build-exe.mjs",
+    "build:mac": "bash scripts/build-macos-app.sh"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "optionalDependencies": {
+    "officeparser": "^8.2.0",
+    "pdf-to-png-converter": "^4.2.1",
+    "playwright-core": "^1.55.0"
+  }
+}

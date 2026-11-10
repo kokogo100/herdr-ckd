@@ -1,0 +1,20 @@
+# Herdr CKD 공식 연동 플러그인 설정 (OSC 7501 Rev 0.4 Program Status Protocol)
+# Created by AXNli Inc. (주식회사 에이엑스엔엘아이 — https://axnli.com)
+name = "herdr-ckd"
+version = "0.2.0"
+description = "Herdr CKD: 중심 코어 C(1개 고정) + 다중 [A_n·B_n] 스레드 협업 런타임 및 대시보드"
+license = "Apache-2.0"
+
+[agent]
+id = "herdr-ckd"
+protocol = "osc7501"
+roles = ["C (Core Leader)", "A1..An (Maker)", "B1..Bn (Checker)"]
+states = ["working", "blocked", "idle", "done", "error", "clear"]
+
+[commands.ui]
+description = "Herdr CKD 스레드 분리 데스크톱 대시보드 실행 (또는 기존 세션 재접속)"
+run = "node dist/src/ui-server.js"
+
+[commands.mcp]
+description = "Herdr CKD MCP 서버 실행 (Antigravity / Gemini / Claude / Cursor 연동)"
+run = "node dist/src/server.js"
